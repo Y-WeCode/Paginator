@@ -3,7 +3,7 @@
 namespace YWC\PaginatorBundle\Utils;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use YWC\CommonBundle\Utils\Model\Paginable;
+use YWC\PaginatorBundle\Utils\Model\Paginable;
 
 class Paginator
 {
