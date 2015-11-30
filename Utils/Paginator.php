@@ -1,6 +1,6 @@
 <?php
 
-namespace YWC\CommonBundle\Utils;
+namespace YWC\PaginatorBundle\Utils;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use YWC\CommonBundle\Utils\Model\Paginable;
