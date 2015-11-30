@@ -1,0 +1,4 @@
+services:
+    ywc_common.paginator:
+        class: YWC\PaginatorBundle\Utils\Paginator
+        arguments: [%ywc_common.default_pagination%, %ywc_common.pagination_range%]

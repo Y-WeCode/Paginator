@@ -1,0 +1,30 @@
+{
+    "name" : "ywc/paginator-bundle",
+    "description" : "Paginator",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Raphaël Babel",
+        "email" : "rbabel@yes-we-code.fr"
+    }],
+    "keywords" : [
+        "paginator"
+    ],
+    "license" : [
+        "Proprietary"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-4" : {
+            "YWC\\PaginatorBundle\\" : ""
+        }
+    },
+    "target-dir" : "",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "0.0.0-dev"
+        }
+    }
+}
