@@ -1,6 +1,6 @@
 <?php
 
-namespace YWC\PaginatorBundle\Utils\Model;
+namespace YWC\PaginatorBundle\Model;
 
 interface Paginable
 {

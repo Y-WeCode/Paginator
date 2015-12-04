@@ -12,48 +12,8 @@
 		{% for item in paginator.items %}
 			<div>{{ item }}</div>
 		{% endfor %}
-	{% endif %}
+	{% endif %}	
 
-	{% if paginator.maxPage > 1 %}
-		<center>
-			<nav>
-				<ul class="pagination">
-					{% if paginator.page > 1 %}
-						<li>
-							<a href="{{ path(paginator.route, {'page': paginator.previous}) }}" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-					{% else %}
-						<li class="disabled">
-							<span>
-								<span aria-hidden="true">&laquo;</span>
-							</span>
-						</li>
-					{% endif %}
-					{% for page in paginator.range %}
-						{% if page == paginator.page %}
-							<li class="active"><span>{{ page }}<span class="sr-only">(current)</span></span></li>
-						{% else %}
-							<li><a href="{{ path(paginator.route, {'page': page})  }}">{{ page }}</a></li>
-						{% endif %}
-					{% endfor %}
-					{% if paginator.page < paginator.maxPage %}
-						<li>
-							<a href="{{ path(paginator.route, {'page': paginator.next}) }}" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					{% else %}
-						<li class="disabled">
-							<span>
-								<span aria-hidden="true">&raquo;</span>
-							</span>
-						</li>
-					{% endif %}
-				</ul>
-			</nav>
-		</center>
-	{% endif %}
+	{% if paginator.maxPage > 1 %}{% include 'YWCPaginatorBundle:Paginator:pagination.html.twig' %}{% endif %}
 
 {% endblock %} 

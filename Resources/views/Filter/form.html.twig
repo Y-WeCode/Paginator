@@ -1,0 +1,15 @@
+{% set filterForm = paginator.filterFormView %}
+
+{{ form_start(filterForm) }}
+
+{% for child in filterForm %}
+	{% if 'token' not in form_label(child) %}
+                {{ form_label(child) }}
+        {% endif %}
+	{{ form_errors(child) }}
+	{{ form_widget(child) }}
+{% endfor %}
+
+{{ form_rest(filterForm) }}
+<input type="submit" class="btn btn-primary" value="Filtrer" />
+{{ form_end(filterForm) }}
