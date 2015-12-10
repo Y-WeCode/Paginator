@@ -53,6 +53,11 @@ class Paginator
         $this->repository = $repository;
     }
 
+    public function getTitle()
+    {
+        return $this->repository->getDefaultTitle();
+    }
+
     public function getMaxPage()
     {
         return max(1, ceil($this->repository->count()/$this->pageMaxItems));
@@ -84,6 +89,13 @@ class Paginator
     public function getRoute()
     {
         return $this->route;
+    }
+
+    public function getBaseRoute()
+    {
+        if(substr($this->route, -5) === 'index') return substr($this->route, 0, -5);
+
+        return false;
     }
 
     public function getPrevious()
@@ -129,8 +141,12 @@ class Paginator
         );
     }
 
-    public function handleRequest(Request $request)
+    public function handleRequest(Request $request, $page = null)
     {
+        // Set Route and page
+        if(is_null($this->route)) $this->route = $request->get('_route');
+        if(!is_null($page)) $this->setPage($page);
+        
         // Manage Filter
         if($this->repository instanceof Filtrable) {
             $session = $request->getSession();
@@ -160,5 +176,5 @@ class Paginator
                 }
             }
         }
-    }
+    }    
 }
