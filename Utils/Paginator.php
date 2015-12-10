@@ -46,6 +46,7 @@ class Paginator
         $this->maxRange = $maxRange;
         $this->formFactory = $formFactory;
         $this->groupActions = array();
+	$this->filter = array();
     }
 
     public function setRepository(Paginable $repository)
