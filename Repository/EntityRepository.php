@@ -48,8 +48,8 @@ class EntityRepository extends BaseRepository implements Paginable
 
     public function getDefaultTitle()
     {
-	$ret = array_pop(explode('\\', $this->getEntityName()));
-
-        return $ret;
+        $tmp = explode('\\', $this->getEntityName());
+            
+        return array_pop($tmp);
     }
 }
